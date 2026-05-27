@@ -106,7 +106,7 @@ REST_FRAMEWORK = {
 
 # Production overrides
 if os.environ.get("RAILWAY_ENVIRONMENT"):
-    DEBUG = True
+    DEBUG = False
     ALLOWED_HOSTS = ["*"]
     DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
