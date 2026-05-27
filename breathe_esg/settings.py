@@ -87,6 +87,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "breathe_esg" / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
@@ -108,7 +109,6 @@ if os.environ.get("RAILWAY_ENVIRONMENT"):
     DEBUG = True
     ALLOWED_HOSTS = ["*"]
     DATABASES["default"] = dj_database_url.config(conn_max_age=600)
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOGGING = {
     "version": 1,
